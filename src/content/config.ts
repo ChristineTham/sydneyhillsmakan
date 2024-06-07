@@ -60,6 +60,17 @@ const category = defineCollection({
     })
 })
 
+const location = defineCollection({
+  schema: ({ image }) =>
+    z.object({
+      title: z.string(),
+      description: z.string(),
+      parent: reference('location').optional(),
+      location: z.string(),
+      image: image()
+    })
+})
+
 const author = defineCollection({
   schema: ({ image }) =>
     z.object({
@@ -85,6 +96,7 @@ export const collections = {
   page,
   partner,
   category,
+  location,
   author,
   social
 }

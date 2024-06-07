@@ -26,3 +26,13 @@ collections:
       - { label: "Discount Text", name: "discount_text", widget: "string", required: false }
       - { label: "Comment", name: "comment", widget: "string", required: false }
       - { label: "Body", name: "body", widget: "markdown" }
+  - name: "location"
+    label: "Locations"
+    folder: "src/content/location"
+    create: true
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Description", name: "description", widget: "string", required: false }
+      - { label: "Location", name: "location", widget: "map" }
+      - { label: "Image", name: "image", widget: "image" }
+      - { label: "Parent", name: "parent", widget: "relation", collection: "location", value_field: "{{slug}}", search_field: ["{{slug}}"] }
